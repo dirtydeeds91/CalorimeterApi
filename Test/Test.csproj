@@ -63,6 +63,10 @@
       <Project>{29eec504-a3a5-4079-8df3-1a6cd6889a30}</Project>
       <Name>ExcelReader</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Nutrition.Data\Nutrition.Data.csproj">
+      <Project>{cf94f114-dbb2-47cd-a5ec-64756e6983dd}</Project>
+      <Name>Nutrition.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
