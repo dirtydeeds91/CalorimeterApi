@@ -7,6 +7,7 @@ using Excel;
 using System.IO;
 using System.Data;
 using Nutrition.Data;
+using System.Threading;
 
 namespace ExcelReader
 {
@@ -14,7 +15,9 @@ namespace ExcelReader
     {
         public void ReadExcelReports()
         {
-            FileStream stream = File.Open("C:\\Users\\Ivan\\Desktop\\ABBREV - Copy.xlsx", FileMode.Open, FileAccess.Read);
+            Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture;
+
+            FileStream stream = File.Open(@"..\..\..\nutrition.xlsx", FileMode.Open, FileAccess.Read);
 
             IExcelDataReader excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream);
             excelReader.IsFirstRowAsColumnNames = true;
