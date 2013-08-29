@@ -26,6 +26,7 @@ namespace Nutrition.Data
         public Nullable<double> Fats { get; set; }
         public Nullable<double> Proteins { get; set; }
         public Nullable<double> Sugars { get; set; }
+        public Nullable<double> Serving { get; set; }
     
         public virtual ICollection<Description> Descriptions { get; set; }
     }
