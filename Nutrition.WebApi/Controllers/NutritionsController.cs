@@ -15,6 +15,7 @@ namespace Nutrition.WebApi.Controllers
         {
             var responseMsg = this.PerformOperationAndHandleExeptions(() =>
             {
+                int i;
                 using (var context = new NutritionContext())
                 {
                     var models = new HashSet<ProductsByKeywordModel>();
