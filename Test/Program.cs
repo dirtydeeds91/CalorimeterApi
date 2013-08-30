@@ -20,12 +20,17 @@ namespace Test
             //var c = new Stopwatch();
             //c.Start();
             
-            using (var calorimeter = new CalorimeterEntities())
-            //using (var calorimeter = new NutritionContext())
+            //using (var calorimeter = new CalorimeterEntities())
+            using (var calorimeter = new NutritionContext())
             {
                 var test = calorimeter.Products.First(p => p.ProductId == 69);
                 Console.WriteLine(test.ProductName);
                 Console.WriteLine(test.Proteins);
+                Console.WriteLine(test.Serving);
+                foreach (var tag in test.Descriptions)
+                {
+                    Console.WriteLine(tag.KeyWord);
+                }
             }
 
             //c.Stop();

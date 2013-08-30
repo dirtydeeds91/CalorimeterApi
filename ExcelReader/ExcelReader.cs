@@ -31,6 +31,7 @@ namespace ExcelReader
                 var fat = excelReader.GetValue(3);
                 var carbs = excelReader.GetValue(4);
                 var sugar = excelReader.GetValue(5);
+                var serving = excelReader.GetValue(6);
                 var description = productName.Split(',');
                 List<string> descriptionTag = new List<string>();
                 descriptionTag.AddRange(description);
@@ -61,6 +62,10 @@ namespace ExcelReader
                 {
                     sugar = 0;
                 }
+                if (serving == null)
+                {
+                    serving = 100;
+                }
 
                 using (NutritionContext db = new NutritionContext())
                 {
@@ -72,6 +77,7 @@ namespace ExcelReader
                         Fats = double.Parse(fat.ToString()),
                         Proteins = double.Parse(protein.ToString()),
                         Sugars = double.Parse(sugar.ToString()),
+                        Serving = double.Parse(serving.ToString())
                     };
 
                     db.Products.Add(productToAdd);
